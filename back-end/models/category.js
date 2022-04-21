@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Category.associate = (models) => {
-    Category.belongsToMany(models.Item, {
+    Category.belongsTo(models.Item, {
       foreignKey: 'category_id',
       as: 'items',
     });
