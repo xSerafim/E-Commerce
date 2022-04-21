@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'item_id',
       as: 'items',
     });
-    Sale.haOne(models.User, {
+    Sale.belongsTo(models.User, {
       foreignKey: 'user_id',
       as: 'user',
     });
