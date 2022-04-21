@@ -16,10 +16,9 @@ async function createUser(data) {
       };
     }
 
-    const { id, email } = await User.create(data);
-    const token = jwt.createToken({ id, email });
+    await User.create(data);
 
-    return { code: status.CREATED_STATUS, message: token };
+    return { code: status.CREATED, message: 'User registered' };
   } catch (err) {
     return server.errorHandler(err);
   }
@@ -34,4 +33,22 @@ async function deleteUser(id) {
   }
 }
 
-module.exports = { createUser, deleteUser };
+async function userLogin(data) {
+  try {
+    const userExist = await User.findOne({
+      where: { email: data.email, password: data.password },
+    });
+
+    if (!userExist)
+      return { code: status.NOT_FOUND, message: 'User not found' };
+
+    const { id, email } = userExist;
+    const token = jwt.createToken({ id, email });
+
+    return { code: status.CREATED, message: token };
+  } catch (err) {
+    return server.errorHandler(err);
+  }
+}
+
+module.exports = { createUser, deleteUser, userLogin };
