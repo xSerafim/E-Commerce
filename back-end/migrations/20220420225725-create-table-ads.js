@@ -3,17 +3,17 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable(
-      'Advertising',
+      'Ads',
       {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
         },
-        anuncioId: {
+        adId: {
           type: Sequelize.STRING,
           allowNull: false,
-          field: 'anuncio_id',
+          field: 'ad_id',
         },
         itemId: {
           type: Sequelize.INTEGER,
@@ -33,6 +33,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => { // eslint-disable-line
-    await queryInterface.dropTable('Advertising');
+    await queryInterface.dropTable('Ads');
   },
 };

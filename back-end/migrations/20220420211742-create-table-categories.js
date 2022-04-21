@@ -3,30 +3,22 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable(
-      'Users',
+      'Categories',
       {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
         },
-        firstName: {
-          type: Sequelize.STRING,
-          allowNull: false,
-          field: 'first_name',
-        },
-        lastName: {
-          type: Sequelize.STRING,
-          allowNull: false,
-          field: 'last_name',
-        },
-        email: {
+        categoryName: {
+          field: 'category_name',
           type: Sequelize.STRING,
           allowNull: false,
         },
-        password: {
+        subCategory: {
+          field: 'sub_category',
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
         },
       },
       {
@@ -36,6 +28,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => { // eslint-disable-line
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Categories');
   },
 };

@@ -10,9 +10,14 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true,
         },
-        type: {
-          type: Sequelize.STRING,
+        categoryId: {
+          type: Sequelize.INTEGER,
           allowNull: false,
+          field: 'category_id',
+          references: {
+            model: 'Categories',
+            key: 'id',
+          },
         },
         brand: {
           type: Sequelize.STRING,
@@ -36,6 +41,10 @@ module.exports = {
         },
         size: {
           type: Sequelize.STRING,
+          allowNull: false,
+        },
+        price: {
+          type: Sequelize.DECIMAL,
           allowNull: false,
         },
       },
