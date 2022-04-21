@@ -14,4 +14,11 @@ async function deleteUser(req, res) {
   return res.status(code).end();
 }
 
-module.exports = { createUser, deleteUser };
+async function userLogin(req, res) {
+  const data = req.body;
+  const { code, message } = await service.userLogin(data);
+
+  return res.status(code).json({ message });
+}
+
+module.exports = { createUser, deleteUser, userLogin };
