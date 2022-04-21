@@ -8,7 +8,7 @@ function tokenValidation(req, res, next) {
     return res.status(status.UNAUTHORIZED).json({ message: 'Token not found' });
 
   const validToken = jwt.validateToken(authorization);
-  console.log(validToken);
+
   if (!validToken)
     return res
       .status(status.UNAUTHORIZED)
