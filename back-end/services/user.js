@@ -3,7 +3,7 @@ const status = require('../utils/requestStatus');
 const jwt = require('../helpers/jwt');
 const server = require('../utils/serverErrorHandler');
 
-async function createUser(data) {
+async function create(data) {
   try {
     const emailIsAlreadyRegistered = await User.findOne({
       where: { email: data.email },
@@ -24,7 +24,7 @@ async function createUser(data) {
   }
 }
 
-async function deleteUser(id) {
+async function destroy(id) {
   try {
     await User.destroy({ where: { id } });
     return { code: status.NO_CONTENT };
@@ -33,7 +33,7 @@ async function deleteUser(id) {
   }
 }
 
-async function userLogin(data) {
+async function login(data) {
   try {
     const userExist = await User.findOne({
       where: { email: data.email, password: data.password },
@@ -51,4 +51,4 @@ async function userLogin(data) {
   }
 }
 
-module.exports = { createUser, deleteUser, userLogin };
+module.exports = { create, destroy, login };
