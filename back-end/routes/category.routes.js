@@ -12,4 +12,8 @@ categoryRouter
   .route('/:name')
   .get(auth.tokenValidation, categoryController.findAllItemsByCategory);
 
+categoryRouter
+  .route('/:id')
+  .delete(auth.tokenValidation, categoryController.destroy);
+
 module.exports = { categoryRouter };
