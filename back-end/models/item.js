@@ -39,9 +39,11 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Item.associate = (models) => {
-    Item.belongsTo(models.Category, {
-      foreignKey: 'category_id',
-      as: 'category',
+    models.Category.hasOne(models.Supply, {
+      foreignKey: 'item_id',
+      as: 'supply',
+      through: Item,
+      otherkey: 'category_id',
     });
   };
 
