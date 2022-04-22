@@ -3,6 +3,7 @@ const { Category, Item, Supply } = require('../models');
 const status = require('../utils/requestStatus');
 const server = require('../utils/serverErrorHandler');
 
+// ----Admin funcs---- //
 async function create({ mainCategory, subCategory }) {
   try {
     const subCategoryExists = await Category.findOne({
@@ -19,6 +20,24 @@ async function create({ mainCategory, subCategory }) {
     return server.errorHandler(err);
   }
 }
+
+async function destroy(id) {
+  try {
+    const categoryExists = await Category.findOne({
+      where: { id },
+    });
+
+    if (!categoryExists)
+      return { code: status.BAD_REQUEST, message: 'Category doesn"t exist' };
+
+    await Category.destroy({ where: { id } });
+
+    return { code: status.OK, message: 'Deleted category' };
+  } catch (err) {
+    return server.errorHandler(err);
+  }
+}
+// ------------------------- //
 
 async function findAll() {
   try {
@@ -69,4 +88,5 @@ module.exports = {
   create,
   findAll,
   findAllItemsByCategory,
+  destroy,
 };
