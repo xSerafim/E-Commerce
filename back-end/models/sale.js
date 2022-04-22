@@ -20,16 +20,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  Sale.associate = (models) => {
-    Sale.hasMany(models.Item, {
-      foreignKey: 'item_id',
-      as: 'items',
-    });
-    Sale.belongsTo(models.User, {
-      foreignKey: 'user_id',
-      as: 'user',
-    });
-  };
+  // Sale.associate = (models) => {
+  //   Sale.hasMany(models.Item, {
+  //     foreignKey: 'item_id',
+  //     as: 'items',
+  //   });
+  //   Sale.belongsTo(models.User, {
+  //     foreignKey: 'user_id',
+  //     as: 'user',
+  //   });
+  // };
 
   return Sale;
 };

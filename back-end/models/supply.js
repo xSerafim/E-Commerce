@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  Supply.associate = (models) => {
-    Supply.belongsTo(models.Item, {
-      foreignKey: 'item_id',
-      as: 'item',
-    });
-  };
+  // Supply.associate = (models) => {
+  //   Supply.belongsTo(models.Item, {
+  //     foreignKey: 'item_id',
+  //     as: 'item',
+  //   });
+  // };
 
   return Supply;
 };
