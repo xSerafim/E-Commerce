@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const { Category, Item } = require('../models');
+const { Category, Item, Supply } = require('../models');
 const status = require('../utils/requestStatus');
 const server = require('../utils/serverErrorHandler');
 
@@ -46,7 +46,16 @@ async function findAllItemsByCategory(category) {
         [Op.or]: [{ categoryName: category }, { subCategory: category }],
       },
       include: [
-        { model: Item, as: 'item', attributes: { exclude: ['category_id'] } },
+        {
+          model: Item,
+          as: 'item',
+          attributes: { exclude: ['category_id'] },
+        },
+        {
+          model: Supply,
+          as: 'supply',
+          attributes: { exclude: ['item_id'] },
+        },
       ],
     });
 
