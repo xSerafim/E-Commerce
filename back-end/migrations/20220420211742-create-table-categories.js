@@ -10,8 +10,8 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true,
         },
-        categoryName: {
-          field: 'category_name',
+        mainCategory: {
+          field: 'main_category',
           type: Sequelize.STRING,
           allowNull: false,
         },

@@ -3,7 +3,7 @@ const { Category, Item, Supply } = require('../models');
 const status = require('../utils/requestStatus');
 const server = require('../utils/serverErrorHandler');
 
-async function create({ categoryName, subCategory }) {
+async function create({ mainCategory, subCategory }) {
   try {
     const subCategoryExists = await Category.findOne({
       where: { subCategory },
@@ -12,7 +12,7 @@ async function create({ categoryName, subCategory }) {
     if (subCategoryExists)
       return { code: status.BAD_REQUEST, message: 'Category already exist' };
 
-    await Category.create({ categoryName, subCategory });
+    await Category.create({ mainCategory, subCategory });
 
     return { code: status.CREATED, message: 'Created new category' };
   } catch (err) {
@@ -34,7 +34,7 @@ async function findAllItemsByCategory(category) {
   try {
     const categoryExists = await Category.findOne({
       where: {
-        [Op.or]: [{ categoryName: category }, { subCategory: category }],
+        [Op.or]: [{ mainCategory: category }, { subCategory: category }],
       },
     });
 
@@ -43,7 +43,7 @@ async function findAllItemsByCategory(category) {
 
     const categories = await Category.findAll({
       where: {
-        [Op.or]: [{ categoryName: category }, { subCategory: category }],
+        [Op.or]: [{ mainCategory: category }, { subCategory: category }],
       },
       include: [
         {

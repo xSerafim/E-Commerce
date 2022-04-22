@@ -1,7 +1,7 @@
 const JOI = require('joi');
 
 const createSchema = JOI.object({
-  categoryName: JOI.string().required(),
+  mainCategory: JOI.string().required(),
   subCategory: JOI.string().required(),
 });
 
