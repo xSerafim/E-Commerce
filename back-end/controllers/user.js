@@ -1,24 +1,24 @@
-const service = require('../services/user');
+const userService = require('../services/user');
 
-async function createUser(req, res) {
+async function create(req, res) {
   const data = req.body;
-  const { code, message } = await service.createUser(data);
+  const { code, message } = await userService.create(data);
 
   return res.status(code).json({ message });
 }
 
-async function deleteUser(req, res) {
+async function destroy(req, res) {
   const { userId } = req;
-  const { code } = await service.deleteUser(userId);
+  const { code } = await userService.destroy(userId);
 
   return res.status(code).end();
 }
 
-async function userLogin(req, res) {
+async function login(req, res) {
   const data = req.body;
-  const { code, message } = await service.userLogin(data);
+  const { code, message } = await userService.login(data);
 
   return res.status(code).json({ message });
 }
 
-module.exports = { createUser, deleteUser, userLogin };
+module.exports = { create, destroy, login };
