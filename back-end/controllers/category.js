@@ -7,6 +7,13 @@ async function create(req, res) {
   return res.status(code).json({ message });
 }
 
+async function destroy(req, res) {
+  const { id } = req.params;
+  const { code, message } = await categoryServices.destroy(id);
+
+  return res.status(code).json({ message });
+}
+
 async function findAll(_req, res) {
   const { code, categories } = await categoryServices.findAll();
 
@@ -20,4 +27,4 @@ async function findAllItemsByCategory(req, res) {
   return res.status(code).json({ message });
 }
 
-module.exports = { create, findAll, findAllItemsByCategory };
+module.exports = { create, destroy, findAll, findAllItemsByCategory };
