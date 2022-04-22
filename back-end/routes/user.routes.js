@@ -1,13 +1,13 @@
 const userRouter = require('express').Router();
-const controller = require('../controllers/user');
-const { tokenValidation } = require('../middlewares/tokenValidation');
+const userController = require('../controllers/user');
+const auth = require('../middlewares/tokenValidation');
 const joi = require('../middlewares/userValidation');
 
 userRouter
   .route('/')
-  .post(joi.createUserValidation, controller.createUser)
-  .delete(tokenValidation, controller.deleteUser);
+  .post(joi.createValidation, userController.create)
+  .delete(auth.tokenValidation, userController.destroy);
 
-userRouter.route('/login').get(controller.userLogin);
+userRouter.route('/login').get(joi.loginValidation, userController.login);
 
 module.exports = { userRouter };
