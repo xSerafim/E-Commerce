@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 
 const joiErrorHandler = require('./middlewares/joiErrorHandler');
+const { adRouter } = require('./routes/ad.routes');
 const { categoryRouter } = require('./routes/category.routes');
 const { itemRouter } = require('./routes/item.routes');
 const { supplyRouter } = require('./routes/supply.routes');
@@ -22,6 +23,8 @@ app.use('/category', categoryRouter);
 app.use('/item', itemRouter);
 
 app.use('/supply', supplyRouter);
+
+app.use('/ad', adRouter);
 
 app.use(joiErrorHandler);
 
