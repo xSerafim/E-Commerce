@@ -2,48 +2,27 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable(
-      'Sales',
-      {
-        id: {
-          type: Sequelize.INTEGER,
-          primaryKey: true,
-          autoIncrement: true,
-        },
-        itemId: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          field: 'item_id',
-          references: {
-            model: 'Items',
-            key: 'id',
-          },
-        },
-        userId: {
-          field: 'user_id',
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: 'Users',
-            key: 'id',
-          },
-        },
-        quantity: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-        },
-        totalPrice: {
-          field: 'total_price',
-          type: Sequelize.DECIMAL,
-          allowNull: false,
-        },
+    await queryInterface.createTable('Sales', {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
       },
-      {
-        timestamps: true,
-        createdAt: 'created_date',
-        updatedAt: 'updated_date',
-      }
-    );
+      sale: {
+        type: Sequelize.JSON,
+        allowNull: false,
+      },
+      totalPrice: {
+        field: 'total_price',
+        type: Sequelize.FLOAT(10, 2),
+        allowNull: false,
+      },
+      createdAt: {
+        field: 'created_at',
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+    });
   },
 
   down: async (queryInterface, Sequelize) => { // eslint-disable-line
