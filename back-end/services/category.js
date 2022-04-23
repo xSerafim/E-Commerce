@@ -15,7 +15,10 @@ async function create({ mainCategory, subCategory }) {
 
     await Category.create({ mainCategory, subCategory });
 
-    return { code: status.CREATED, message: 'Created new category' };
+    return {
+      code: status.CREATED,
+      message: 'Created new category succesfully',
+    };
   } catch (err) {
     return server.errorHandler(err);
   }
@@ -32,7 +35,7 @@ async function destroy(id) {
 
     await Category.destroy({ where: { id } });
 
-    return { code: status.OK, message: 'Deleted category' };
+    return { code: status.OK, message: 'Deleted category succesfully' };
   } catch (err) {
     return server.errorHandler(err);
   }
@@ -58,7 +61,7 @@ async function findAllItemsByCategory(category) {
     });
 
     if (!categoryExists)
-      return { code: status.BAD_REQUEST, message: 'Category not found' };
+      return { code: status.NOT_FOUND, message: 'Category not found' };
 
     const categories = await Category.findAll({
       where: {
@@ -84,9 +87,22 @@ async function findAllItemsByCategory(category) {
   }
 }
 
+async function findById(id) {
+  try {
+    const category = await Category.findOne({ where: { id } });
+
+    if (category) return { code: status.OK, message: category };
+
+    return { code: status.BAD_REQUEST, message: 'Category not found' };
+  } catch (err) {
+    return server.errorHandler(err);
+  }
+}
+
 module.exports = {
   create,
   findAll,
   findAllItemsByCategory,
+  findById,
   destroy,
 };
