@@ -2,29 +2,23 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable(
-      'Categories',
-      {
-        id: {
-          type: Sequelize.INTEGER,
-          primaryKey: true,
-          autoIncrement: true,
-        },
-        mainCategory: {
-          field: 'main_category',
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
-        subCategory: {
-          field: 'sub_category',
-          type: Sequelize.STRING,
-          allowNull: true,
-        },
+    await queryInterface.createTable('Categories', {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
       },
-      {
-        timestamps: false,
-      }
-    );
+      mainCategory: {
+        field: 'main_category',
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      subCategory: {
+        field: 'sub_category',
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+    });
   },
 
   down: async (queryInterface, Sequelize) => { // eslint-disable-line
