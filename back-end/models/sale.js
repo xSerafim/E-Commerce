@@ -2,34 +2,25 @@ module.exports = (sequelize, DataTypes) => {
   const Sale = sequelize.define(
     'Sale',
     {
-      quantity: {
-        type: DataTypes.INTEGER,
+      sale: {
+        type: DataTypes.JSON,
         allowNull: false,
       },
       totalPrice: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.FLOAT(10, 2),
         allowNull: false,
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: new Date(),
       },
     },
     {
-      timestamps: true,
-      createdAt: 'created_date',
-      updatedAt: 'updated_date',
+      timestamps: false,
       underscored: true,
       tableName: 'Sales',
     }
   );
-
-  // Sale.associate = (models) => {
-  //   Sale.hasMany(models.Item, {
-  //     foreignKey: 'item_id',
-  //     as: 'items',
-  //   });
-  //   Sale.belongsTo(models.User, {
-  //     foreignKey: 'user_id',
-  //     as: 'user',
-  //   });
-  // };
 
   return Sale;
 };
