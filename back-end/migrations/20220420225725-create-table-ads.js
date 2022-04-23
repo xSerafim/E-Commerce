@@ -19,7 +19,6 @@ module.exports = {
           type: Sequelize.INTEGER,
           field: 'item_id',
           allowNull: false,
-          unique: true,
           references: {
             model: 'Items',
             key: 'id',
