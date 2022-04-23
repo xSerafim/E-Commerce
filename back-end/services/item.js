@@ -1,4 +1,4 @@
-const { Item } = require('../models');
+const { Item, Supply } = require('../models');
 const categoryServices = require('./category');
 const server = require('../utils/serverErrorHandler');
 const status = require('../utils/requestStatus');
@@ -6,7 +6,15 @@ const serialize = require('../utils/serializer');
 
 async function findAll() {
   try {
-    const items = await Item.findAll();
+    const items = await Item.findAll({
+      include: [
+        {
+          model: Supply,
+          as: 'supply',
+          attributes: { exclude: ['item_id'] },
+        },
+      ],
+    });
     return { code: status.OK, message: items };
   } catch (err) {
     return server.errorHandler(err);
@@ -15,7 +23,16 @@ async function findAll() {
 
 async function findById(id) {
   try {
-    const item = await Item.findOne({ where: { id } });
+    const item = await Item.findOne({
+      where: { id },
+      include: [
+        {
+          model: Supply,
+          as: 'supply',
+          attributes: { exclude: ['item_id'] },
+        },
+      ],
+    });
 
     if (item) return { code: status.OK, message: item };
 
