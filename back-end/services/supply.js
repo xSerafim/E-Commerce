@@ -1,4 +1,4 @@
-const { Supply } = require('../models');
+const { Supply, Item } = require('../models');
 const status = require('../utils/requestStatus');
 const server = require('../utils/serverErrorHandler');
 
@@ -31,4 +31,33 @@ async function update(id, quantity, sum) {
   }
 }
 
-module.exports = { update };
+async function findAll() {
+  try {
+    const supplies = await Supply.findAll();
+    return { code: status.OK, message: supplies };
+  } catch (err) {
+    return server.errorHandler(err);
+  }
+}
+
+async function findById(id) {
+  try {
+    const supply = await Supply.findOne({
+      where: { id },
+      include: [
+        {
+          model: Item,
+          as: 'item',
+          attributes: { exclude: ['id'] },
+        },
+      ],
+    });
+
+    if (supply) return { code: status.OK, message: supply };
+    return { code: status.BAD_REQUEST, message: 'Item doesn"t exist' };
+  } catch (err) {
+    return server.errorHandler(err);
+  }
+}
+
+module.exports = { update, findAll, findById };
