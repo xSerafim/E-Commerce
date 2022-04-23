@@ -10,13 +10,13 @@ function calculateNewQuantity(sum, prevQuantity, newQuantity) {
 async function update(id, quantity, sum) {
   try {
     const item = await Supply.findOne({
-      where: { item_id: id },
+      where: { itemId: id },
     });
 
     if (!item) {
       return {
         code: status.BAD_REQUEST,
-        message: 'Item doesn"t exist',
+        message: 'Item doesn"t exists',
       };
     }
     const newQuantity = calculateNewQuantity(sum, item.quantity, quantity);
@@ -24,7 +24,7 @@ async function update(id, quantity, sum) {
     if (newQuantity < 0)
       return { code: status.CREATED, message: 'Quantity can"t be updated' };
 
-    await Supply.update({ quantity: newQuantity }, { where: { item_id: id } });
+    await Supply.update({ quantity: newQuantity }, { where: { itemId: id } });
     return { code: status.CREATED, message: 'Quantity was updated' };
   } catch (err) {
     return server.errorHandler(err);
@@ -60,4 +60,4 @@ async function findById(id) {
   }
 }
 
-module.exports = { update, findAll, findById };
+module.exports = { update, findAll, findById, calculateNewQuantity };
