@@ -45,6 +45,10 @@ module.exports = (sequelize, DataTypes) => {
       through: Item,
       otherkey: 'category_id',
     });
+    Item.hasOne(models.Supply, {
+      foreignKey: 'item_id',
+      as: 'supply',
+    });
   };
 
   return Item;
