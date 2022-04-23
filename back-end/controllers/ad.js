@@ -13,4 +13,11 @@ async function findById(req, res) {
   return res.status(code).json({ message });
 }
 
-module.exports = { findAll, findById };
+async function create(req, res) {
+  const { ids } = req.body;
+  const { code, message } = await adServices.create(ids);
+
+  return res.status(code).json({ message });
+}
+
+module.exports = { findAll, findById, create };
