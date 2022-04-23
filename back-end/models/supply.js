@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Supply.associate = (models) => {
     Supply.belongsTo(models.Item, {
-      foreignKey: 'item_id',
+      foreignKey: 'itemId',
       as: 'item',
     });
   };

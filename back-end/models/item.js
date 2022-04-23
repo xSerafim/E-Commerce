@@ -40,13 +40,13 @@ module.exports = (sequelize, DataTypes) => {
 
   Item.associate = (models) => {
     models.Category.hasOne(models.Supply, {
-      foreignKey: 'item_id',
+      foreignKey: 'itemId',
       as: 'supply',
       through: Item,
-      otherkey: 'category_id',
+      otherkey: 'categoryId',
     });
     Item.hasOne(models.Supply, {
-      foreignKey: 'item_id',
+      foreignKey: 'itemId',
       as: 'supply',
     });
   };

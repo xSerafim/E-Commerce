@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'Ad',
     {
       adId: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Ad.associate = (models) => {
     Ad.belongsTo(models.Item, {
-      foreignKey: 'item_id',
+      foreignKey: 'itemId',
       as: 'item',
     });
   };
