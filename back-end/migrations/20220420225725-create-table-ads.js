@@ -11,7 +11,7 @@ module.exports = {
           autoIncrement: true,
         },
         adId: {
-          type: Sequelize.STRING,
+          type: Sequelize.INTEGER,
           allowNull: false,
           field: 'ad_id',
         },
