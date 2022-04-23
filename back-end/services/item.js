@@ -2,7 +2,6 @@ const { Item, Supply } = require('../models');
 const categoryServices = require('./category');
 const server = require('../utils/serverErrorHandler');
 const status = require('../utils/requestStatus');
-const serialize = require('../utils/serializer');
 
 async function findAll() {
   try {
@@ -48,14 +47,12 @@ async function create(data) {
     const category = await categoryServices.findById(data.categoryId);
     if (category.code === status.BAD_REQUEST) return category;
 
-    const serializedData = serialize.item(data);
-
-    const itemExist = await Item.findOne({ where: serializedData });
+    const itemExist = await Item.findOne({ where: data });
 
     if (itemExist)
       return { code: status.BAD_REQUEST, message: 'Item already exist' };
 
-    await Item.create(serializedData);
+    await Item.create(data);
 
     return { code: status.CREATED, message: 'Created new item succesfully' };
   } catch (err) {
