@@ -4,6 +4,7 @@ const express = require('express');
 const joiErrorHandler = require('./middlewares/joiErrorHandler');
 const { categoryRouter } = require('./routes/category.routes');
 const { itemRouter } = require('./routes/item.routes');
+const { supplyRouter } = require('./routes/supply.routes');
 const { userRouter } = require('./routes/user.routes');
 
 const app = express();
@@ -19,6 +20,8 @@ app.use('/user', userRouter);
 app.use('/category', categoryRouter);
 
 app.use('/item', itemRouter);
+
+app.use('/supply', supplyRouter);
 
 app.use(joiErrorHandler);
 
