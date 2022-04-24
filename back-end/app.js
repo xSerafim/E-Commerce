@@ -4,6 +4,7 @@ const express = require('express');
 const joiErrorHandler = require('./middlewares/joiErrorHandler');
 const { adRouter } = require('./routes/ad.routes');
 const { categoryRouter } = require('./routes/category.routes');
+const { discountRouter } = require('./routes/discount.routes');
 const { itemRouter } = require('./routes/item.routes');
 const { saleRouter } = require('./routes/sale.routes');
 const { supplyRouter } = require('./routes/supply.routes');
@@ -28,6 +29,8 @@ app.use('/supply', supplyRouter);
 app.use('/ad', adRouter);
 
 app.use('/sale', saleRouter);
+
+app.use('/discount', discountRouter);
 
 app.use(joiErrorHandler);
 
