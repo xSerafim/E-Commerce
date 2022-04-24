@@ -2,10 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { signUpSchema } from '../../utils/validations';
+import { signUpSchema } from '../../Utils/Validations';
 import { handleFetch } from '../../Services/Api';
-import { user } from '../../utils/endpoints';
-import { POST } from '../../utils/methods';
+import { user } from '../../Utils/Endpoints';
+import { POST } from '../../Utils/Methods';
 
 export default function SignUp() {
   const {

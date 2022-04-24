@@ -1,4 +1,4 @@
-import RoutesComponent from './routes';
+import RoutesComponent from './Routes';
 
 export default function App() {
   return (

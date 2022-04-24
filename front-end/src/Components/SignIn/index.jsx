@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { signInSchema } from '../../utils/validations';
+import { signInSchema } from '../../Utils/Validations';
 
 export default function SignIn() {
   const {
