@@ -7,5 +7,7 @@ adRouter
   .route('/')
   .get(auth.tokenValidation, adController.findAll)
   .post(auth.tokenValidation, joi.createValidation, adController.create);
+
 adRouter.route('/:id').get(auth.tokenValidation, adController.findById);
+
 module.exports = { adRouter };
