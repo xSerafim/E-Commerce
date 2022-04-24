@@ -1,9 +1,9 @@
-function App() {
+import RoutesComponent from './routes';
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
+    <div>
+      <RoutesComponent />
     </div>
   );
 }
-
-export default App;
