@@ -4,8 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { signUpSchema } from '../../Utils/Validations';
 import { handleFetch } from '../../Services/Api';
-import { user } from '../../Utils/Endpoints';
-import { POST } from '../../Utils/Methods';
+import { url } from '../../Utils/Endpoints';
+import { method } from '../../Utils/Methods';
 
 export default function SignUp() {
   const {
@@ -17,7 +17,7 @@ export default function SignUp() {
   });
 
   const onSubmit = async (data) => {
-    const response = await handleFetch(POST, user, data);
+    const response = await handleFetch(method.POST, url.user, data);
     console.log(response);
   };
 

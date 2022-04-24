@@ -1,23 +1,23 @@
-export const user = 'http://localhost:3001/user';
+export const url = {
+  user: 'http://localhost:3001/user',
+  userLogin: 'http://localhost:3001/user/login',
 
-export const login = 'http://localhost:3001/login';
+  categories: 'http://localhost:3001/category',
+  categoryByName: (name) => `http://localhost:3001/user/${name}`,
+  categoryById: (id) => `http://localhost:3001/user/${id}`,
 
-export const categories = 'http://localhost:3001/category';
-export const categoryByName = (name) => `http://localhost:3001/user/${name}`;
-export const categoryById = (id) => `http://localhost:3001/user/${id}`;
+  items: 'http://localhost:3001/item',
+  itemById: (id) => `http://localhost:3001/item/${id}`,
 
-export const items = 'http://localhost:3001/item';
-export const itemById = (id) => `http://localhost:3001/item/${id}`;
+  supplies: 'http://localhost:3001/supply',
+  supplyById: (id) => `http://localhost:3001/supply/${id}`,
 
-export const supplies = 'http://localhost:3001/supply';
-export const supplyById = (id) => `http://localhost:3001/supply/${id}`;
+  ads: 'http://localhost:3001/ad',
+  adById: (id) => `http://localhost:3001/ad/${id}`,
 
-export const ads = 'http://localhost:3001/ad';
-export const adById = (id) => `http://localhost:3001/ad/${id}`;
+  sales: 'http://localhost:3001/sale',
+  saleById: (id) => `http://localhost:3001/sale/${id}`,
 
-export const sales = 'http://localhost:3001/sale';
-export const saleById = (id) => `http://localhost:3001/sale/${id}`;
-
-export const discounts = 'http://localhost:3001/discount';
-export const discountByCoupon = (coupon) =>
-  `http://localhost:3001/discount/${coupon}`;
+  discounts: 'http://localhost:3001/discount',
+  discountByCoupon: (coupon) => `http://localhost:3001/discount/${coupon}`,
+};
