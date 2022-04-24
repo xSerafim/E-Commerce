@@ -3,6 +3,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { signInSchema } from '../../Utils/Validations';
+import { handleFetch } from '../../Services/Api';
+import { userLogin } from '../../Utils/Endpoints';
+import { GET } from '../../Utils/Methods';
 
 export default function SignIn() {
   const {
@@ -13,9 +16,11 @@ export default function SignIn() {
     resolver: zodResolver(signInSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const response = await handleFetch(GET, userLogin, data);
+    console.log(response);
+  };
 
-  console.log(errors);
   return (
     <div>
       <h1>Já sou cliente</h1>
