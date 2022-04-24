@@ -2,30 +2,34 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Ads', {
+    await queryInterface.createTable('Discounts', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      adId: {
-        type: Sequelize.INTEGER,
+      coupon: {
+        type: Sequelize.STRING,
         allowNull: false,
-        field: 'ad_id',
+        unique: true,
       },
-      itemId: {
+      discount: {
         type: Sequelize.INTEGER,
-        field: 'item_id',
         allowNull: false,
-        references: {
-          model: 'Items',
-          key: 'id',
-        },
+      },
+      active: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      createdAt: {
+        field: 'created_at',
+        type: Sequelize.DATE,
+        allowNull: false,
       },
     });
   },
 
   down: async (queryInterface, Sequelize) => { // eslint-disable-line
-    await queryInterface.dropTable('Ads');
+    await queryInterface.dropTable('Discounts');
   },
 };

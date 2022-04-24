@@ -4,43 +4,43 @@ module.exports = {
       'Categories',
       [
         {
-          category_name: 'Roupas',
+          main_category: 'Roupas',
           sub_category: 'Camisetas',
         },
         {
-          category_name: 'Roupas',
+          main_category: 'Roupas',
           sub_category: 'Calças',
         },
         {
-          category_name: 'Roupas',
+          main_category: 'Roupas',
           sub_category: 'Bermudas',
         },
         {
-          category_name: 'Roupas',
+          main_category: 'Roupas',
           sub_category: 'Vestidos',
         },
         {
-          category_name: 'Calçados',
+          main_category: 'Calçados',
           sub_category: 'Chinelos',
         },
         {
-          category_name: 'Calçados',
+          main_category: 'Calçados',
           sub_category: 'Tênis',
         },
         {
-          category_name: 'Calçados',
+          main_category: 'Calçados',
           sub_category: 'Chuteiras',
         },
         {
-          category_name: 'Acessórios',
+          main_category: 'Acessórios',
           sub_category: 'Óculos',
         },
         {
-          category_name: 'Acessórios',
+          main_category: 'Acessórios',
           sub_category: 'Boné',
         },
         {
-          category_name: 'Acessórios',
+          main_category: 'Acessórios',
           sub_category: 'Relógios',
         },
       ],
