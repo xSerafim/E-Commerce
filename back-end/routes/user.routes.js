@@ -8,6 +8,6 @@ userRouter
   .post(joi.createValidation, userController.create)
   .delete(auth.tokenValidation, userController.destroy);
 
-userRouter.route('/login').get(joi.loginValidation, userController.login);
+userRouter.route('/login').post(joi.loginValidation, userController.login);
 
 module.exports = { userRouter };
