@@ -18,7 +18,7 @@ export default function SignIn() {
 
   const onSubmit = async (data) => {
     const response = await handleFetch(method.GET, url.userLogin, data);
-    console.log(response);
+    console.log(response, 'commit');
   };
 
   return (
