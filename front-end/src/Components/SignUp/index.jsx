@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import './style.css';
 
 import { signUpSchema } from '../../Utils/Validations';
 import { handleFetch } from '../../Services/Api';
@@ -22,7 +23,7 @@ export default function SignUp() {
   };
 
   return (
-    <div>
+    <div className="sign-up">
       <h1>Criar conta</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Nome" {...register('firstName')} />
