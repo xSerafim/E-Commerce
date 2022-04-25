@@ -1,0 +1,28 @@
+.full-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary-header {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-cart {
+  display: flex;
+  justify-content: space-around;
+  width: 10%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 10px;
+}
