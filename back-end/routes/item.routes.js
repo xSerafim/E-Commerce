@@ -5,7 +5,7 @@ const joi = require('../middlewares/itemValidation');
 
 itemRouter
   .route('/')
-  .get(auth.tokenValidation, itemController.findAll)
+  .get(itemController.findAll)
   .post(auth.tokenValidation, joi.createValidation, itemController.create);
 
 itemRouter
