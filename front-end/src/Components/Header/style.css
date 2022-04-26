@@ -17,7 +17,7 @@
 .login-cart {
   display: flex;
   justify-content: space-around;
-  width: 10%;
+  width: 125px;
 }
 
 .navigation {
