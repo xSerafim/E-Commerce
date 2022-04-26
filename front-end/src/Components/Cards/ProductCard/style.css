@@ -1,0 +1,10 @@
+.product-image {
+  width: 85%;
+  margin: 3%;
+}
+
+.product-container {
+  width: 33.1%;
+  border: 1px solid black;
+  text-align: center;
+}
