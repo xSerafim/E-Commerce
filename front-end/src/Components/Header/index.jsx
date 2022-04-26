@@ -6,13 +6,10 @@ export default function Header() {
   return (
     <div className="full-header">
       <div className="primary-header">
-        <div className="header-logo">Loja de Roupas</div>
-        <div className="header-search">
-          <form>
-            <input placeholder="O que você procura?" type="text" />
-            <button type="submit">pesquisar</button>
-          </form>
+        <div className="header-logo">
+          <Link to="/">Loja de Roupas</Link>
         </div>
+        <div className="header-search" />
         <div className="login-cart">
           <div className="login">
             <Link to="/login">Login</Link>
@@ -26,8 +23,13 @@ export default function Header() {
         <nav className="navigation">
           <span>Masculino</span>
           <span>Feminino</span>
-          <span>categorias</span>
         </nav>
+        <form>
+          <input placeholder="O que você procura?" type="text" />
+          <button type="submit">
+            <i className="fa-solid fa-magnifying-glass search-logo" />
+          </button>
+        </form>
       </div>
     </div>
   );
