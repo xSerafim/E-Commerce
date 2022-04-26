@@ -10,7 +10,7 @@ discountRouter
 
 discountRouter
   .route('/:coupon')
-  .get(auth.tokenValidation, discountController.findByCoupon)
+  .get(discountController.findByCoupon)
   .put(auth.tokenValidation, joi.updateValidation, discountController.update);
 
 module.exports = { discountRouter };

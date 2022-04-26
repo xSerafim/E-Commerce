@@ -7,8 +7,12 @@ const removeDuplicates = require('../utils/removeDuplicates');
 
 async function findAll() {
   try {
-    const ads = await Ad.findAll();
-    const adsWithoutDuplicate = removeDuplicates.removeDuplicateAllAds(ads);
+    const ads = await Ad.findAll({
+      attributes: { exclude: ['itemId'] },
+      include: [{ model: Item, as: 'item' }],
+    });
+
+    const adsWithoutDuplicate = removeDuplicates.removeAdDuplicateById(ads);
     return { code: status.OK, message: adsWithoutDuplicate };
   } catch (err) {
     return server.errorHandler(err);
@@ -18,7 +22,7 @@ async function findAll() {
 async function findById(id) {
   try {
     const ad = await Ad.findAll({
-      where: { ad_id: id },
+      where: { adId: id },
       attributes: { exclude: ['itemId'] },
       include: [{ model: Item, as: 'item' }],
     });
