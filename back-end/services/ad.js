@@ -11,7 +11,7 @@ async function findAll() {
       attributes: { exclude: ['itemId'] },
       include: [{ model: Item, as: 'item' }],
     });
-    console.log(ads);
+
     const adsWithoutDuplicate = removeDuplicates.removeAdDuplicateById(ads);
     return { code: status.OK, message: adsWithoutDuplicate };
   } catch (err) {
