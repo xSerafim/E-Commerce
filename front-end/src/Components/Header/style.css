@@ -1,12 +1,16 @@
 .full-header {
   display: flex;
   flex-direction: column;
+  background-color: black;
+  font-size: 30px;
+  height: 8vh;
+  width: 100%;
+  justify-content: center;
 }
 
 .primary-header {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
 }
 
 .header-menu {
@@ -14,15 +18,223 @@
   justify-content: space-around;
 }
 
-.login-cart {
+.header-logo {
   display: flex;
-  justify-content: space-around;
-  width: 125px;
+  align-self: center;
+  font-size: 45px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-.navigation {
+.nav-list{
   display: flex;
-  justify-content: space-between;
-  width: 60%;
-  margin: 10px;
+  align-self: center;
+}
+
+.nav-list li {
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+.mobile-menu {
+  cursor: pointer;
+  color: white;
+  align-self: center;
+  font-size: 20px;
+  display: none;
+}
+
+.link {
+  color: white;
+  transition: 0.3s;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.search-box-mobile {
+  display: flex;
+  width: 100%;
+  height: 55%;
+  justify-content: center;
+  background-color: #e5e5e5;
+  opacity: 1.2;
+  display: none;
+}
+
+.search-box-mobile input {
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+}
+
+.search-box-mobile button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: grey;
+  padding-right: 10px;
+}
+
+.search-mobile {
+  margin: 2px;
+  height: 55%;
+  display:flex;
+  border: 1px solid grey;
+  padding: 2px;
+  width: 97%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.search-desktop {
+  height: 40%;
+  display:flex;
+  align-self: center;
+  border:1px solid grey;
+  padding:2px;
+  width: 30%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.search-desktop input {
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+}
+
+.search-desktop button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: grey;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header-logo {
+    font-size: 40px;
+  }
+  .nav-list li {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .header-logo {
+    font-size: 35px;
+  }
+  .nav-list li {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .primary-header {
+    height: 70%;
+    margin: 0 2vh;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    font-size: 30px;
+  }
+
+  .mobile-menu {
+    display: block;
+    font-size: 22px;
+  }
+
+  .search-desktop {
+    display: none
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 3.4vh;
+    right: 0;
+    width: 10vh;
+    height: 100vh;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .search-box-mobile {
+    display: block;
+    height: 38%
+  }
+
+  .search-mobile {
+    width: 98.5%;
+  }
+  
+}
+
+@media screen and (max-width: 560px) {
+  .header-logo {
+    font-size: 25px;
+  }
+
+  .search-box-mobile {
+    display: block;
+  }
+
+  .search-mobile {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .primary-header {
+    height: 70%;
+    margin: 0 2vh;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    font-size: 20px;
+  }
+
+  .mobile-menu {
+    display: block;
+    font-size: 18px;
+  }
+
+  .search-desktop {
+    display: none;
+  }
+
+  .search-box-mobile {
+    display: block;
+    height: 30%;
+  }
+
+  .search-mobile {
+    width: 97.5%;
+    margin: 1px;
+  }
 }
