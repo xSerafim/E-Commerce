@@ -81,6 +81,7 @@
   padding-left: 10px;
   width: 100%;
   border: none;
+  outline: none;
 }
 
 .search-mobile button {
@@ -107,6 +108,7 @@
   padding-left: 10px;
   width: 100%;
   border: none;
+  outline: none;
 }
 
 .search-desktop button {
