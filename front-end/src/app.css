@@ -3,6 +3,11 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  outline: none;
+}
+
+html {
+  background-color: f9f9f9;
 }
 
 /* @media screen and (max-width: 800px) {
