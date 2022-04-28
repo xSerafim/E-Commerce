@@ -16,7 +16,6 @@ export default function Header() {
         }s`;
       }
     }
-    console.log(mobileLinks[0].style.animation);
   };
 
   return (
