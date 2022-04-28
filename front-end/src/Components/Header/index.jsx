@@ -47,23 +47,25 @@ export default function Header() {
             <i className="fa-solid fa-magnifying-glass search-logo" />
           </button>
         </form>
-        <ul className="nav-list">
-          <li className="header-home mobile-link">
-            <Link className="link" to="/">
-              <i className="fa-solid fa-house" />
-            </Link>
-          </li>
-          <li className="login mobile-link">
-            <Link className="link" to="/login">
-              <i className="fa-solid fa-user" />
-            </Link>
-          </li>
-          <li className="cart mobile-link">
-            <Link className="link" to="/login">
-              <i className="fa-solid fa-cart-shopping" />
-            </Link>
-          </li>
-        </ul>
+        <div className="nav-container">
+          <ul className="nav-list">
+            <li className="header-home mobile-link">
+              <Link className="link" to="/">
+                <i className="fa-solid fa-house" />
+              </Link>
+            </li>
+            <li className="login mobile-link">
+              <Link className="link" to="/login">
+                <i className="fa-solid fa-user" />
+              </Link>
+            </li>
+            <li className="cart mobile-link">
+              <Link className="link" to="/login">
+                <i className="fa-solid fa-cart-shopping" />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
       <div className="search-box-mobile">
         <form className="search-mobile">
