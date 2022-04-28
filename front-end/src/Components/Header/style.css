@@ -158,7 +158,11 @@
   }
 
   .header-logo {
-    font-size: 30px;
+    width: 100%;
+    font-size: 33px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
   }
 
   .mobile-menu {
@@ -226,7 +230,7 @@
 
 @media screen and (max-width: 560px) {
   .header-logo {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .search-mobile {
@@ -239,8 +243,16 @@
     height: 70%;
   }
 
-  .header-logo {
+  .mobile-menu {
     font-size: 20px;
+  }
+
+  .nav-list {
+    font-size: 18px;
+  }
+
+  .header-logo {
+    font-size: 28px;
   }
 
   .search-desktop {

@@ -10,14 +10,6 @@ html {
   background-color: f9f9f9;
 }
 
-/* @media screen and (max-width: 800px) {
-  body, html {
-    margin: 0;
-  }
+.price {
+  color: #6d6d6d;
 }
-
-@media screen and (max-width: 400px) {
-  body, html {
-    margin: 0;
-  }
-} */
