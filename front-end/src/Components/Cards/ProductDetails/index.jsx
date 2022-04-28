@@ -19,7 +19,7 @@ export default function ProductDetails({ data }) {
 
   return (
     <div className="details-box">
-      <div>
+      <div className="image-box">
         <img
           className="product-image-details"
           src={image.image}
@@ -30,24 +30,27 @@ export default function ProductDetails({ data }) {
       <div className="color-container">
         <p>{image.name}</p>
         <span>{`R$${image.price}`}</span>
-        <div>
-          {colorsAndSizes.map(({ color }, i) => (
-            <button
-              className="color-button"
-              type="button"
-              key={color}
-              onClick={() => setItemIndex(i) > imageColor(i)}
-            >
-              <div className="color-box" style={{ backgroundColor: color }} />
-            </button>
-          ))}
-        </div>
         <select>
           <option>Selecione o tamanho...</option>
           {colorsAndSizes[itemIndex].sizes.map((size) => (
             <option key={size}>{size}</option>
           ))}
         </select>
+        <div>
+          <p>Cores Disponíveis</p>
+          <div>
+            {colorsAndSizes.map(({ color }, i) => (
+              <button
+                className="color-button"
+                type="button"
+                key={color}
+                onClick={() => setItemIndex(i) > imageColor(i)}
+              >
+                <div className="color-box" style={{ backgroundColor: color }} />
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
