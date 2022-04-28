@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './style.css';
@@ -9,6 +9,8 @@ import { url } from '../../Utils/Endpoints';
 import { method } from '../../Utils/Methods';
 
 export default function SignUp() {
+  const [userNotFound, setUserNotFound] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -19,7 +21,11 @@ export default function SignUp() {
 
   const onSubmit = async (data) => {
     const response = await handleFetch(method.POST, url.user, data);
-    console.log(response);
+    if (!response) {
+      setUserNotFound(true);
+    } else {
+      setUserNotFound(false);
+    }
   };
 
   return (
@@ -34,6 +40,7 @@ export default function SignUp() {
         <p>{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
         <p>{errors?.password?.message}</p>
+        {userNotFound && <p>E-mail já cadastrado</p>}
         <input type="submit" />
       </form>
     </div>
