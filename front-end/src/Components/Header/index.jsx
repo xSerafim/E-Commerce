@@ -59,8 +59,13 @@ export default function Header() {
               </Link>
             </li>
             <li className="cart mobile-link">
-              <Link className="link" to="/login">
+              <Link className="link" to="/cart">
                 <i className="fa-solid fa-cart-shopping" />
+              </Link>
+            </li>
+            <li className="favorite mobile-link">
+              <Link className="link" to="/favorites">
+                <i className="fa-solid fa-heart" />
               </Link>
             </li>
           </ul>
