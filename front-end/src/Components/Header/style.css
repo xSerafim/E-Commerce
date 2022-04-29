@@ -207,6 +207,10 @@
     margin-top: 35px;
   }
 
+  .favorite{
+    margin-top: 35px;
+  }
+
   .nav-list.active {
     transform: translateX(0);
     transition: transform 0.3s ease-in;
