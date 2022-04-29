@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { removeDuplicate } from '../../../Utils/Functions/removeDuplicate';
+import AddToCartBtn from '../../Buttons/AddToCart';
 import './style.css';
 
 export default function ProductDetails({ data }) {
@@ -28,8 +29,8 @@ export default function ProductDetails({ data }) {
       </div>
 
       <div className="color-container">
-        <p>{image.name}</p>
-        <span>{`R$${image.price}`}</span>
+        <p className="product-name">{image.name}</p>
+        <p className="price detail-price">{`R$${image.price}`}</p>
         <select>
           <option>Selecione o tamanho...</option>
           {colorsAndSizes[itemIndex].sizes.map((size) => (
@@ -51,6 +52,7 @@ export default function ProductDetails({ data }) {
             ))}
           </div>
         </div>
+        <AddToCartBtn />
       </div>
     </div>
   );
