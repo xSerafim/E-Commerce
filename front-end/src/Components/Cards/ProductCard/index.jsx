@@ -10,7 +10,7 @@ export default function ProductCard({ name, image, price, adId }) {
         <img className="product-image" src={image} alt={name} />
       </Link>
       <p className="product-name">{name}</p>
-      <span>{`R$ ${price}`}</span>
+      <span className="price">{`R$ ${price}`}</span>
     </div>
   );
 }
