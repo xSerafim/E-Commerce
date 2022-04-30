@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { saveItem } from '../Store/Actions/saveItem';
+import subQuantityOfItems from '../Utils/Functions/subQuantityOfItem';
+import sumQuantityOfItems from '../Utils/Functions/sumQuantityOfItems';
 
 export default function useLocalStorage(key = 'cartItems', initialState = []) {
   const dispatch = useDispatch();
@@ -16,10 +18,17 @@ export default function useLocalStorage(key = 'cartItems', initialState = []) {
   };
 
   const setValue = useCallback(
-    (value = []) => {
+    (value = [], isSum = true) => {
       try {
-        dispatch(saveItem([...value, ...newItem()]));
-        localStorage.setItem(key, JSON.stringify([...value, ...newItem()]));
+        if (isSum) {
+          const itemsWithQuantity = sumQuantityOfItems(value, newItem());
+          dispatch(saveItem(itemsWithQuantity));
+          localStorage.setItem(key, JSON.stringify(itemsWithQuantity));
+        } else {
+          const itemsWithQuantity = subQuantityOfItems(value, newItem());
+          dispatch(saveItem(itemsWithQuantity));
+          localStorage.setItem(key, JSON.stringify(itemsWithQuantity));
+        }
       } catch (error) {
         console.log(error);
       }
