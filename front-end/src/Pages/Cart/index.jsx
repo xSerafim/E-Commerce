@@ -4,6 +4,7 @@ import CartCard from '../../Components/Cards/CartCard';
 import './style.css';
 
 import Header from '../../Components/Header';
+import FinishShale from '../../Components/FinishSale';
 
 export default function Cart() {
   const items = useSelector((state) => state.items);
@@ -13,6 +14,7 @@ export default function Cart() {
       <Header />
       <div className="cart-main">
         {items && items.map((item) => <CartCard key={item.id} item={item} />)}
+        <FinishShale />
       </div>
     </div>
   );
