@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import useLocalStorage from '../../../Hooks';
 
-export default function DeleteItemBtn({ id }) {
+import './style.css';
+
+export default function DeleteItemBtn({ item }) {
+  const [setValue] = useLocalStorage();
   return (
     <div className="trash">
-      <button type="button" onClick={() => console.log(id)}>
+      <button
+        type="button"
+        className="delete-button"
+        onClick={() => setValue([item], false, true)}
+      >
         <i className="fa-solid fa-trash-can" />
       </button>
     </div>
@@ -12,5 +20,5 @@ export default function DeleteItemBtn({ id }) {
 }
 
 DeleteItemBtn.propTypes = {
-  id: PropTypes.string,
+  item: PropTypes.string,
 }.required;
