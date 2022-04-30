@@ -17,12 +17,21 @@ export default function CartCard({ item }) {
         </div>
         <div className="cart-infos">
           <h3 className="cart-item-name">{item.name}</h3>
-          <div className="cart-color" style={{ backgroundColor: item.color }} />
+          <div className="cart-color-container">
+            <h3 className="cart-color-name">Cor</h3>
+            <div
+              className="cart-color"
+              style={{ backgroundColor: item.color }}
+            />
+          </div>
+          <div className="cart-size-container">
+            <h3 className="cart-size-name">{`Tamanho: ${item.size}`}</h3>
+          </div>
         </div>
-        <DeleteItemBtn className="delete-btn" id={item.id} />
+        <DeleteItemBtn className="delete-btn" item={item} />
       </div>
       <Quantity item={item} />
-      <div className="line" />
+      <hr />
     </div>
   );
 }
