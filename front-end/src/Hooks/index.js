@@ -18,14 +18,18 @@ export default function useLocalStorage(key = 'cartItems', initialState = []) {
   };
 
   const setValue = useCallback(
-    (value = [], isSum = true) => {
+    (value = [], isSum = true, delProduct = false) => {
       try {
         if (isSum) {
           const itemsWithQuantity = sumQuantityOfItems(value, newItem());
           dispatch(saveItem(itemsWithQuantity));
           localStorage.setItem(key, JSON.stringify(itemsWithQuantity));
         } else {
-          const itemsWithQuantity = subQuantityOfItems(value, newItem());
+          const itemsWithQuantity = subQuantityOfItems(
+            value,
+            newItem(),
+            delProduct
+          );
           dispatch(saveItem(itemsWithQuantity));
           localStorage.setItem(key, JSON.stringify(itemsWithQuantity));
         }
