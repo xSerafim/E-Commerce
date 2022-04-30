@@ -63,7 +63,12 @@ export default function ProductDetails({ data }) {
             ))}
           </div>
         </div>
-        <AddToCartBtn color={color} size={size} items={items} />
+        <AddToCartBtn
+          color={color}
+          size={size}
+          items={items}
+          adId={data[0].adId}
+        />
       </div>
     </div>
   );
