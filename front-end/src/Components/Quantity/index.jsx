@@ -7,16 +7,32 @@ export default function Quantity({ item }) {
   return (
     <div className="calc-price">
       <div className="product-quantity">
-        <button type="button" onClick={() => setValue([item], false)}>
+        <button
+          type="button"
+          className="min-button"
+          disabled={item.quantity === 1}
+          onClick={() => setValue([item], false)}
+        >
           <i className="fa-solid fa-minus" />
         </button>
-        <input type="number" value={item.quantity} readOnly />
-        <button type="button" onClick={() => setValue([item])}>
+        <input
+          type="number"
+          className="quantity-input"
+          value={item.quantity}
+          readOnly
+        />
+        <button
+          type="button"
+          className="plus-button"
+          onClick={() => setValue([item])}
+        >
           <i className="fa-solid fa-plus" />
         </button>
-        <div className="subtotal-price">
-          <h3 className="cart-item-price">{`R$${item.price}`}</h3>
-        </div>
+      </div>
+      <div className="subtotal-price">
+        <h3 className="cart-item-price">{`R$ ${(
+          item.price * item.quantity
+        ).toFixed(2)}`}</h3>
       </div>
     </div>
   );
