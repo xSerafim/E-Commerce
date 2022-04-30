@@ -1,6 +1,7 @@
 .color-box {
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   border: 1px solid black;
 }
 
@@ -31,6 +32,7 @@
   background-color: transparent;
   padding: 0;
   border: 0;
+  margin-right: 10px;
   margin-bottom: 30px;
 }
 
