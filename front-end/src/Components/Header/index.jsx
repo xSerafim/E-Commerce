@@ -5,6 +5,7 @@ import './style.css';
 export default function Header() {
   const navList = document.getElementsByClassName('nav-list');
   const mobileLinks = document.getElementsByClassName('mobile-link');
+  const searchBox = document.getElementsByClassName('search-box-mobile');
 
   const animateLinks = () => {
     for (let i = 0; i < mobileLinks.length; i += 1) {
@@ -24,6 +25,7 @@ export default function Header() {
         <button
           onClick={() => {
             navList[0].classList.toggle('active');
+            searchBox[0].classList.toggle('active');
             animateLinks();
           }}
           type="button"
