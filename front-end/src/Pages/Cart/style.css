@@ -101,4 +101,40 @@
     border: 1px solid grey;
     cursor: pointer;
   }
+
+  .summary-items {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+  }
+
+  .wrapper-items-infos {
+    margin: 1vh 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .items-infos {
+    font-size: 15px;
+    color: #6d6d6d;
+  }
+
+  .items-price {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .items-total-price {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .wrapper-items-infos input {
+    width: 50%;
+    border-radius: 3px;
+    padding-left: 3px;
+  }
 }
