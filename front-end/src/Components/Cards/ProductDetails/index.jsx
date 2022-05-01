@@ -18,7 +18,7 @@ export default function ProductDetails({ data }) {
 
   const colorsAndSizes = removeDuplicate(colors, items);
 
-  const [size, setSize] = useState('Selecione');
+  const [size, setSize] = useState('Selecione o tamanho');
   const [color, setColor] = useState(() => {
     if (colors.length === 1) return colors[0];
     return '';
@@ -37,7 +37,10 @@ export default function ProductDetails({ data }) {
       <div className="color-container">
         <p className="product-name">{image.name}</p>
         <p className="price detail-price">{`R$${image.price}`}</p>
-        <select onChange={({ target: { value } }) => setSize(value)}>
+        <select
+          value={size}
+          onChange={({ target: { value } }) => setSize(value)}
+        >
           <option>Selecione o tamanho...</option>
           {colorsAndSizes[itemIndex].sizes.map((currSize) => (
             <option key={currSize}>{currSize}</option>

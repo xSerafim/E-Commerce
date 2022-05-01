@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import DeleteItemBtn from '../../Buttons/DeleteItem';
 import Quantity from '../../Quantity';
-import './style.css';
 
 export default function CartCard({ item }) {
   return (
