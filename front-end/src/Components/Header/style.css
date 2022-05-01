@@ -152,6 +152,10 @@
     overflow-x: hidden;
   }
 
+  .full-header {
+    height: 12vh;
+  }
+
   .primary-header {
     height: 70%;
     justify-content: space-between;
@@ -159,7 +163,7 @@
 
   .header-logo {
     width: 100%;
-    font-size: 33px;
+    font-size: 40px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -224,27 +228,36 @@
 
   .search-box-mobile {
     display: block;
-    height: 38%
+    width: 100vw;
+    height: 37%;
+
+    animation-duration: 0.67s;
+    animation-fill-mode: both;
   }
 
   .search-mobile {
-    width: 98.5%;
+    width: 99%;
+    height: 75%;
+    padding: 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 3.5px;
   }
 }
 
 @media screen and (max-width: 560px) {
   .header-logo {
-    font-size: 30px;
-  }
-
-  .search-mobile {
-    width: 98%;
+    font-size: 37px;
   }
 }
 
 @media screen and (max-width: 420px) {
+  .full-header {
+    height: 12vh;
+  }
+
   .primary-header {
-    height: 70%;
+    height: 63%;
   }
 
   .mobile-menu {
@@ -256,21 +269,24 @@
   }
 
   .header-logo {
-    font-size: 28px;
+    font-size: 33px;
   }
 
   .search-desktop {
     display: none;
   }
 
-  .search-box-mobile {
-    display: block;
-    height: 30%;
+  .search-mobile input {
+    padding-left: 10px;
   }
 
-  .search-mobile {
-    width: 97.5%;
-    margin: 1px;
+  .search-mobile button {
+    padding-righ: 10px;
+    margin: 0;
+  }
+
+  .search-box-mobile.active {
+    animation-name: searchInputFade;
   }
 }
 
@@ -282,4 +298,9 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes searchInputFade {
+  0% {margin-left: 0vw; width: 100vw;}
+  100% {margin-left: 11.8vw; width: 88.2vw;}
 }

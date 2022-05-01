@@ -13,3 +13,24 @@ html {
 .price {
   color: #6d6d6d;
 }
+
+#error-message {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+.login-logout input {
+  width: 74vw;
+}
+
+.login-logout button {
+  width: 75vw;
+}
+
+#added-to-cart {
+  text-align: center;
+  font-size: 14px;
+}

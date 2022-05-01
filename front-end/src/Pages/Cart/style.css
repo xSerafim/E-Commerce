@@ -133,8 +133,16 @@
   }
 
   .wrapper-items-infos input {
-    width: 50%;
+    width: 60%;
+    outline: none;
     border-radius: 3px;
     padding-left: 3px;
+  }
+
+  .wrapper-items-infos button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-right: 10px;
   }
 }
