@@ -4,6 +4,10 @@
     flex-direction: column;
   }
 
+  .summary-items {
+    margin-bottom: 50px;
+  }
+
   .product-cart-box {
     display: flex;
     flex-direction: column;
@@ -113,6 +117,7 @@
 
   .wrapper-items-infos {
     margin: 1vh 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -132,17 +137,22 @@
     font-weight: 600;
   }
 
+  .cupon-input {
+    width: 40%;
+  }
+
   .wrapper-items-infos input {
-    width: 60%;
+    width: 94%;
     outline: none;
     border-radius: 3px;
     padding-left: 3px;
+    margin: 0;
   }
 
   .wrapper-items-infos button {
+    margin-left: -16px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding-right: 10px;
   }
 }

@@ -39,7 +39,7 @@ export default function SignIn() {
         <p id="error-message">{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
         <p id="error-message">{errors?.password?.message}</p>
-        {userNotFound && <p>Email ou senha inválidos</p>}
+        {userNotFound && <p id="error-message">Email ou senha inválidos</p>}
         <button type="submit">Entrar</button>
       </form>
     </div>

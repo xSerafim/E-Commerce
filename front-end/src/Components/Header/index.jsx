@@ -33,6 +33,9 @@ export default function Header() {
         >
           <i className="fa-solid fa-bars" />
         </button>
+        <Link className="cart-mobile link" to="/cart">
+          <i className="fa-solid fa-cart-shopping" />
+        </Link>
         <div className="header-logo">
           <Link className="link" to="/">
             Concept
@@ -60,7 +63,7 @@ export default function Header() {
                 <i className="fa-solid fa-user" />
               </Link>
             </li>
-            <li className="cart mobile-link">
+            <li id="cart" className="cart mobile-link">
               <Link className="link" to="/cart">
                 <i className="fa-solid fa-cart-shopping" />
               </Link>
