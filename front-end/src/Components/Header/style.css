@@ -1,3 +1,7 @@
+.teste {
+  display: none;
+}
+
 .full-header {
   display: flex;
   flex-direction: column;
@@ -152,6 +156,10 @@
     overflow-x: hidden;
   }
 
+  #cart {
+    display: none;
+  }
+
   .full-header {
     height: 12vh;
   }
@@ -200,19 +208,19 @@
   }
 
   .header-home {
-    margin-top: 60px
+    margin-top: 70px
   }
 
   .login {
-    margin-top: 35px
+    margin-top: 30px
   }
 
   .cart{
-    margin-top: 35px;
+    margin-top: 30px
   }
 
   .favorite{
-    margin-top: 35px;
+    margin-top: 30px;
   }
 
   .nav-list.active {
@@ -254,6 +262,19 @@
 @media screen and (max-width: 420px) {
   .full-header {
     height: 12vh;
+    justify-content: space-between;
+    z-index: 0;
+  }
+
+  .cart-mobile {
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    position: absolute;
+    width: 5.5vh;
+    right: 0;
+    font-size: 18px;
+    z-index: 1;
   }
 
   .primary-header {
