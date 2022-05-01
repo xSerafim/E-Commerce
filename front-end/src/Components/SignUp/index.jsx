@@ -31,17 +31,17 @@ export default function SignUp() {
   return (
     <div className="sign-up">
       <h1>Criar conta</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="login-logout" onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Nome" {...register('firstName')} />
-        <p>{errors?.firstName?.message}</p>
+        <p id="error-message">{errors?.firstName?.message}</p>
         <input type="text" placeholder="Sobrenome" {...register('lastName')} />
-        <p>{errors?.lastName?.message}</p>
+        <p id="error-message">{errors?.lastName?.message}</p>
         <input type="text" placeholder="E-mail" {...register('email')} />
-        <p>{errors?.email?.message}</p>
+        <p id="error-message">{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
-        <p>{errors?.password?.message}</p>
+        <p id="error-message">{errors?.password?.message}</p>
         {userNotFound && <p>E-mail já cadastrado</p>}
-        <input type="submit" />
+        <button type="submit">Cadastrar</button>
       </form>
     </div>
   );
