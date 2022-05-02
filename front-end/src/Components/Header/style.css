@@ -2,6 +2,10 @@
   display: none;
 }
 
+.cart-mobile {
+  display: none;
+}
+
 .full-header {
   display: flex;
   flex-direction: column;
