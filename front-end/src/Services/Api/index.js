@@ -10,7 +10,16 @@ export async function handleFetch(method, url, data = {}, headers = {}) {
     });
 
     return response;
-  } catch (err) {
-    return console.log(err.message);
+  } catch (error) {
+    if (error.response) {
+      return console.log({
+        status: error.response.status,
+        message: error.response.data.message,
+      });
+    }
+    if (error.request) {
+      return console.log(error.request, 'request');
+    }
+    return console.log('Error', error.message);
   }
 }
