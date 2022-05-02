@@ -155,4 +155,26 @@
     border: none;
     cursor: pointer;
   }
+
+  .sale-btn-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 75%;
+  }
+
+  .confirm-sale {
+    width: 80%;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: bold;
+    letter-spacing: 3px;
+    border-radius: 1px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: 600;
+  }
 }
