@@ -28,6 +28,10 @@ export default function SignIn() {
       navigate('/');
     } else {
       setUserNotFound(true);
+
+      setTimeout(() => {
+        setUserNotFound(false);
+      }, 2000);
     }
   };
 

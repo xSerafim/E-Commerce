@@ -23,8 +23,10 @@ export default function SignUp() {
     const response = await handleFetch(method.POST, url.user, data);
     if (!response) {
       setUserNotFound(true);
-    } else {
-      setUserNotFound(false);
+
+      setTimeout(() => {
+        setUserNotFound(false);
+      }, 2000);
     }
   };
 
@@ -40,7 +42,7 @@ export default function SignUp() {
         <p id="error-message">{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
         <p id="error-message">{errors?.password?.message}</p>
-        {userNotFound && <p>E-mail já cadastrado</p>}
+        {userNotFound && <p id="error-message">E-mail já cadastrado</p>}
         <button type="submit">Cadastrar</button>
       </form>
     </div>
