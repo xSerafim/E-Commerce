@@ -13,7 +13,7 @@ function hasSupplies(sales, items) {
   );
 }
 
-async function create({ sales, totalPrice }) {
+async function create({ sales, totalPrice }, userId) {
   const items = await Promise.all(
     sales.map(({ itemId }) => supplyServices.findById(itemId))
   );
@@ -30,7 +30,7 @@ async function create({ sales, totalPrice }) {
     )
   );
 
-  await Sale.create({ sale: sales, totalPrice });
+  await Sale.create({ userId, sale: sales, totalPrice });
 
   return { code: status.CREATED, message: 'New sale registered' };
 }
