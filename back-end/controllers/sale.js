@@ -2,7 +2,8 @@ const itemSales = require('../services/sale');
 
 async function create(req, res) {
   const data = req.body;
-  const { code, message } = await itemSales.create(data);
+  const { userId } = req;
+  const { code, message } = await itemSales.create(data, userId);
 
   return res.status(code).json(message);
 }

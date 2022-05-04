@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './style.css';
@@ -9,6 +9,8 @@ import { url } from '../../Utils/Endpoints';
 import { method } from '../../Utils/Methods';
 
 export default function SignUp() {
+  const [userNotFound, setUserNotFound] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -19,22 +21,29 @@ export default function SignUp() {
 
   const onSubmit = async (data) => {
     const response = await handleFetch(method.POST, url.user, data);
-    console.log(response);
+    if (!response) {
+      setUserNotFound(true);
+
+      setTimeout(() => {
+        setUserNotFound(false);
+      }, 2000);
+    }
   };
 
   return (
     <div className="sign-up">
       <h1>Criar conta</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="login-logout" onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Nome" {...register('firstName')} />
-        <p>{errors?.firstName?.message}</p>
+        <p id="error-message">{errors?.firstName?.message}</p>
         <input type="text" placeholder="Sobrenome" {...register('lastName')} />
-        <p>{errors?.lastName?.message}</p>
+        <p id="error-message">{errors?.lastName?.message}</p>
         <input type="text" placeholder="E-mail" {...register('email')} />
-        <p>{errors?.email?.message}</p>
+        <p id="error-message">{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
-        <p>{errors?.password?.message}</p>
-        <input type="submit" />
+        <p id="error-message">{errors?.password?.message}</p>
+        {userNotFound && <p id="error-message">E-mail já cadastrado</p>}
+        <button type="submit">Cadastrar</button>
       </form>
     </div>
   );

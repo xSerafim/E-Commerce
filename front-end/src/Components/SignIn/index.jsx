@@ -28,19 +28,23 @@ export default function SignIn() {
       navigate('/');
     } else {
       setUserNotFound(true);
+
+      setTimeout(() => {
+        setUserNotFound(false);
+      }, 2000);
     }
   };
 
   return (
     <div className="sign-in">
       <h1>Já sou cliente</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="login-logout" onSubmit={handleSubmit(onSubmit)}>
         <input type="email" placeholder="E-mail" {...register('email')} />
-        <p>{errors?.email?.message}</p>
+        <p id="error-message">{errors?.email?.message}</p>
         <input type="password" placeholder="Senha" {...register('password')} />
-        <p>{errors?.password?.message}</p>
-        {userNotFound && <p>Email ou senha inválidos</p>}
-        <input type="submit" />
+        <p id="error-message">{errors?.password?.message}</p>
+        {userNotFound && <p id="error-message">Email ou senha inválidos</p>}
+        <button type="submit">Entrar</button>
       </form>
     </div>
   );

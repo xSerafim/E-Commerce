@@ -8,6 +8,15 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'user_id',
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+      },
       sale: {
         type: Sequelize.JSON,
         allowNull: false,

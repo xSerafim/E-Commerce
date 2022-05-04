@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-export default function ProductCard({ name, image, price }) {
+export default function ProductCard({ name, image, price, adId }) {
   return (
     <div className="product-container">
-      <img className="product-image" src={image} alt={name} />
-      <p>{name}</p>
-      <span>{price}</span>
+      <Link to={`/product/${adId}`}>
+        <img className="product-image" src={image} alt={name} />
+      </Link>
+      <p className="product-name">{name}</p>
+      <span className="price">{`R$ ${price}`}</span>
     </div>
   );
 }

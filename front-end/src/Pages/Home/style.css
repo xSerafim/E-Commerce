@@ -1,8 +1,7 @@
-.home-container {
-  height: 100vh;
-}
-
 .home-products {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  width: 75%;
+  margin-left: 12.5%;
 }

@@ -23,6 +23,7 @@ export default function Home() {
           ads.map(({ items, adId }) => (
             <ProductCard
               key={adId}
+              adId={adId}
               name={items[0].name}
               image={items[0].image}
               price={items[0].price}
