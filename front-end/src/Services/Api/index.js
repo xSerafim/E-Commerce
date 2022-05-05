@@ -9,13 +9,16 @@ export async function handleFetch(method, url, data = {}, headers = {}) {
       headers,
     });
 
-    return response;
+    return { message: response.data.message };
   } catch (error) {
     if (error.response) {
-      return console.log({
+      const err = {
         status: error.response.status,
         message: error.response.data.message,
-      });
+      };
+      console.log(err);
+
+      return err;
     }
     if (error.request) {
       return console.log(error.request, 'request');
