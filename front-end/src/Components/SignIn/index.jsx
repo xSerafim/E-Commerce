@@ -23,10 +23,15 @@ export default function SignIn() {
 
   const onSubmit = async (data) => {
     const response = await handleFetch(method.POST, url.userLogin, data);
-    console.log(response.message);
-    if (!response.message.includes('not found')) {
+
+    if (!response.message.includes('not found') && response.role === 'user') {
       localStorage.setItem('token', response.message);
       navigate('/');
+    } else if (
+      !response.message.includes('not found') &&
+      response.role === 'admin'
+    ) {
+      console.log('ADMIN');
     } else {
       setUserNotFound(true);
 

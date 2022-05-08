@@ -9,7 +9,7 @@ export async function handleFetch(method, url, data = {}, headers = {}) {
       headers,
     });
 
-    return { message: response.data.message };
+    return response.data;
   } catch (error) {
     if (error.response) {
       const err = {

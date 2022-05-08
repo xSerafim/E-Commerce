@@ -21,7 +21,8 @@ export default function SignUp() {
 
   const onSubmit = async (data) => {
     const response = await handleFetch(method.POST, url.user, data);
-    if (!response) {
+
+    if (response.message === 'Email is already registered') {
       setUserNotFound(true);
 
       setTimeout(() => {
