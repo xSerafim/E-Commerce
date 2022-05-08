@@ -42,10 +42,10 @@ async function login(data) {
     if (!userExist)
       return { code: status.NOT_FOUND, message: 'User not found' };
 
-    const { id, email } = userExist;
-    const token = jwt.createToken({ id, email });
+    const { id, email, role } = userExist;
+    const token = jwt.createToken({ id, email, role });
 
-    return { code: status.CREATED, message: token };
+    return { code: status.CREATED, message: token, role };
   } catch (err) {
     return server.errorHandler(err);
   }
