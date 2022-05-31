@@ -31,7 +31,8 @@ export default function SignIn() {
       !response.message.includes('not found') &&
       response.role === 'admin'
     ) {
-      console.log('ADMIN');
+      localStorage.setItem('token', response.message);
+      navigate('/dashboard');
     } else {
       setUserNotFound(true);
 
