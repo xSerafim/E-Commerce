@@ -10,9 +10,7 @@ export default function Home() {
   const [ads, setAds] = useState('');
 
   useEffect(() => {
-    handleFetch(method.GET, url.ads).then(({ data: { message } }) =>
-      setAds(message)
-    );
+    handleFetch(method.GET, url.ads).then(({ message }) => setAds(message));
   }, []);
 
   return (

@@ -5,7 +5,7 @@ async function create(req, res) {
   const { userId } = req;
   const { code, message } = await itemSales.create(data, userId);
 
-  return res.status(code).json(message);
+  return res.status(code).json({ message });
 }
 
 async function findAll(_req, res) {

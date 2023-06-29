@@ -22,7 +22,7 @@ async function create({ sales, totalPrice }, userId) {
     return { code: status.BAD_REQUEST, message: 'Item doesn"t exists' };
 
   if (hasSupplies(sales, items).some((supply) => supply < 0))
-    return { code: status.BAD_REQUEST, message: 'Quantity can"t be updated' };
+    return { code: status.BAD_REQUEST, message: hasSupplies(sales, items) };
 
   await Promise.all(
     sales.map(({ itemId, quantity }) =>

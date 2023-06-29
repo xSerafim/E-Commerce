@@ -14,7 +14,7 @@ export default function ProductAd() {
   const { id } = useParams();
 
   useEffect(() => {
-    handleFetch(method.GET, url.adById(id)).then(({ data: { message } }) =>
+    handleFetch(method.GET, url.adById(id)).then(({ message }) =>
       setAd(message)
     );
   }, []);

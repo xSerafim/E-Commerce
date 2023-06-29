@@ -46,7 +46,7 @@ export default function FinishSale() {
 
     if (cuponIsValid)
       return setDiscount(
-        ((salePrice / 100) * cuponIsValid.data.message.discount).toFixed(2)
+        ((salePrice / 100) * cuponIsValid.message.discount).toFixed(2)
       );
 
     setErr(true);

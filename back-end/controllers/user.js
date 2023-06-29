@@ -16,9 +16,9 @@ async function destroy(req, res) {
 
 async function login(req, res) {
   const data = req.body;
-  const { code, message } = await userService.login(data);
+  const { code, message, role } = await userService.login(data);
 
-  return res.status(code).json({ message });
+  return res.status(code).json({ message, role });
 }
 
 module.exports = { create, destroy, login };
