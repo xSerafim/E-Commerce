@@ -7,9 +7,9 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Jordan DNA 85',
-          image: 'https://images.lojanike.com.br/1024x1024/produto/camiseta-jordan-dna-85-masculina-DM1454-501-1-11648574118.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/013951ID.jpg', // eslint-disable-line
           gender: 'Masculino',
-          color: 'purple',
+          color: 'grey',
           size: 'P',
           price: 250.99,
         },
@@ -17,9 +17,9 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Jordan DNA 85',
-          image: 'https://images.lojanike.com.br/1024x1024/produto/camiseta-jordan-dna-85-masculina-DM1454-501-1-11648574118.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/013951ID.jpg', // eslint-disable-line
           gender: 'Masculino',
-          color: 'purple',
+          color: 'grey',
           size: 'M',
           price: 250.99,
         },
@@ -27,9 +27,9 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Jordan DNA 85',
-          image: 'https://images.lojanike.com.br/1024x1024/produto/camiseta-jordan-dna-85-masculina-DM1454-501-1-11648574118.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/013951ID.jpg', // eslint-disable-line
           gender: 'Masculino',
-          color: 'purple',
+          color: 'grey',
           size: 'G',
           price: 230.99,
         },
@@ -37,9 +37,9 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Nike Sportswear',
-          image: 'https://images.lojanike.com.br/860x860/produto/camiseta-manga-curta-asbury-w-ss-crew-DN2393-215-1-11645629595.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/008369ID.jpg', // eslint-disable-line
           gender: 'Feminino',
-          color: 'brown',
+          color: 'black',
           size: 'P',
           price: 59.99,
         },
@@ -47,9 +47,9 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Nike Sportswear',
-          image: 'https://images.lojanike.com.br/860x860/produto/camiseta-manga-curta-asbury-w-ss-crew-DN2393-215-1-11645629595.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/008369ID.jpg', // eslint-disable-line
           gender: 'Feminino',
-          color: 'brown',
+          color: 'black',
           size: 'G',
           price: 59.99,
         },
@@ -57,7 +57,7 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Nike Sportswear',
-          image: 'https://images.lojanike.com.br/860x860/produto/camiseta-manga-curta-asbury-w-ss-crew-DN2393-611-1-11638986035.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/024816MT.jpg', // eslint-disable-line
           gender: 'Feminino',
           color: 'pink',
           size: 'G',
@@ -67,7 +67,7 @@ module.exports = {
           category_id: 1,
           brand: 'Nike',
           name: 'Camiseta Nike Sportswear',
-          image: 'https://images.lojanike.com.br/860x860/produto/camiseta-manga-curta-asbury-w-ss-crew-DN2393-611-1-11638986035.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/024816MT.jpg', // eslint-disable-line
           gender: 'Feminino',
           color: 'pink',
           size: 'M',
@@ -76,20 +76,20 @@ module.exports = {
         {
           category_id: 1,
           brand: 'Nike',
-          name: 'Camiseta Nike Dri-FIT Miler',
-          image: 'https://images.lojanike.com.br/500x500/produto/camiseta-manga-curta-m-nk-df-miler-top-s-CU5992-494-1-11646344425.jpg', // eslint-disable-line
+          name: 'Regata Nike Dri-FIT Miler',
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/024814ID.jpg', // eslint-disable-line
           gender: 'Feminino',
-          color: 'pink',
+          color: 'black',
           size: 'P',
           price: 99.99,
         },
         {
           category_id: 1,
           brand: 'Nike',
-          name: 'Camiseta Nike Dri-FIT Miler',
-          image: 'https://images.lojanike.com.br/500x500/produto/camiseta-manga-curta-m-nk-df-miler-top-s-CU5992-494-1-11646344425.jpg', // eslint-disable-line
+          name: 'Regata Nike Dri-FIT Miler',
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/024814ID.jpg', // eslint-disable-line
           gender: 'Feminino',
-          color: 'pink',
+          color: 'black',
           size: 'GG',
           price: 99.99,
         },
@@ -97,7 +97,7 @@ module.exports = {
           category_id: 2,
           brand: 'Nike',
           name: 'Calça Nike Sportswear',
-          image: 'https://images.lojanike.com.br/500x500/produto/calca-m-nsw-spe-wvn-ul-utility-pant-DD5207-072-1-11645798650.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/013328ID.jpg', // eslint-disable-line
           gender: 'Masculino',
           color: 'white',
           size: 'P',
@@ -107,7 +107,7 @@ module.exports = {
           category_id: 2,
           brand: 'Nike',
           name: 'Calça Nike Sportswear',
-          image: 'https://images.lojanike.com.br/500x500/produto/calca-m-nsw-spe-wvn-ul-utility-pant-DD5207-072-1-11645798650.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/013328ID.jpg', // eslint-disable-line
           gender: 'Masculino',
           color: 'white',
           size: 'G',
@@ -117,7 +117,7 @@ module.exports = {
           category_id: 2,
           brand: 'Nike',
           name: 'Legging Nke Sportswear Essential',
-          image: 'https://images.lojanike.com.br/500x500/produto/calca-w-nsw-essntl-lggng-swoosh-mr-CZ8530-010-1-11645797988.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/024836ID.jpg', // eslint-disable-line
           gender: 'Feminino',
           color: 'black',
           size: 'M',
@@ -127,7 +127,7 @@ module.exports = {
           category_id: 2,
           brand: 'Nike',
           name: 'Legging Nke Sportswear Essential',
-          image: 'https://images.lojanike.com.br/500x500/produto/calca-w-nsw-essntl-lggng-swoosh-mr-CZ8530-063-1-11645797993.jpg', // eslint-disable-line
+          image: 'https://imgnike-a.akamaihd.net/1920x1920/0220837T.jpg', // eslint-disable-line
           gender: 'Feminino',
           color: 'grey',
           size: 'GG',
