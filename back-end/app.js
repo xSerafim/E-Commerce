@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const joiErrorHandler = require('./middlewares/joiErrorHandler');
 const { adRouter } = require('./routes/ad.routes');
@@ -13,9 +14,9 @@ const { userRouter } = require('./routes/user.routes');
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
-app.use(express.json());
 
 app.get('/', (req, res) => {
   res.status(200).send('Hello World!');
